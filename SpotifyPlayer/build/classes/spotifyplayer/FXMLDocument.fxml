@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="439.0" prefWidth="629.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spotifyplayer.FXMLDocumentController">
+    <children>
+        <Button fx:id="playButton" layoutX="14.0" layoutY="408.0" onAction="#handlePlayButtonAction" prefHeight="17.0" prefWidth="47.0" text="Play" />
+      <Slider fx:id="trackSlider" layoutX="77.0" layoutY="413.0" max="30.0" prefHeight="14.0" prefWidth="458.0" />
+      <ImageView fx:id="albumCoverImageView" fitHeight="256.0" fitWidth="256.0" layoutX="14.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="trackTimeLabel" layoutX="538.0" layoutY="412.0" prefHeight="17.0" prefWidth="77.0" text="90:00 / 90:00" />
+      <Label alignment="CENTER" layoutX="15.0" layoutY="35.0" prefHeight="97.0" prefWidth="477.0" style="-fx-border-color: black;">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tracksTableView" layoutX="277.0" layoutY="170.0" prefHeight="224.0" prefWidth="342.0">
+        <columns>
+          <TableColumn prefWidth="28.0" text="#" />
+          <TableColumn prefWidth="313.0" text="Title" />
+        </columns>
+      </TableView>
+      <TextField fx:id="searchArtistTextField" layoutX="305.0" layoutY="138.0" onAction="#handleSearchButtonAction" prefHeight="25.0" prefWidth="286.0" promptText="Search for artist..." />
+      <Label fx:id="artistLabel" layoutX="26.0" layoutY="39.0" prefHeight="62.0" prefWidth="458.0" text="Artist">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="albumLabel" layoutX="26.0" layoutY="92.0" prefHeight="35.0" prefWidth="458.0" text="Album Title">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="previousAlbumButton" layoutX="277.0" layoutY="138.0" mnemonicParsing="false" onAction="#handlePreviousButtonAction" prefHeight="25.0" prefWidth="28.0" text="&lt;" />
+      <Button fx:id="nextAlbumButton" layoutX="591.0" layoutY="137.0" mnemonicParsing="false" onAction="#handleNextButtonAction" prefHeight="25.0" prefWidth="28.0" text="&gt;" />
+      <MenuBar layoutX="1.0" layoutY="2.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="saveButton" mnemonicParsing="false" onAction="#saveButtonPressed" text="Save Album Cover" />
+              <MenuItem fx:id="exitButton" mnemonicParsing="false" onAction="#exitButtonPressed" text="Exit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ImageView fx:id="artistPictureImageView" fitHeight="97.0" fitWidth="99.0" layoutX="513.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+      <ProgressIndicator fx:id="progress" layoutX="380.0" layoutY="44.0" prefHeight="77.0" prefWidth="99.0" visible="false" />
+    </children>
+</AnchorPane>
